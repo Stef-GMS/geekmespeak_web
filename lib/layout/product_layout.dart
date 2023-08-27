@@ -56,7 +56,7 @@ class ProductLayout extends StatelessComponent {
               ),
             if (playStoreUrl.isNotEmpty) //
               a(
-                href: appStoreUrl,
+                href: playStoreUrl,
                 target: Target.blank,
                 [
                   img(src: '/images/google_play_store.png', height: 54),
