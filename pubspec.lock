@@ -300,9 +300,10 @@ packages:
   jaspr_router:
     dependency: "direct main"
     description:
-      path: "C:\\Users\\Simon\\Git\\jaspr\\packages\\jaspr_router"
-      relative: false
-    source: path
+      name: jaspr_router
+      sha256: "552906bdcff667a8ac20710fd8a686fa084d47c696e31b0377a2cc2910c5980a"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.2.3"
   js:
     dependency: transitive
