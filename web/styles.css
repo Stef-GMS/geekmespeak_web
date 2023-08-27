@@ -196,9 +196,12 @@ div #welcome-items {
     color: #000 !important;
 }
 
+.welcome-item a {
+    font-weight: normal !important;
+}
+
 .welcome-item a:hover {
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 @media only screen and (min-width: 40em) {
