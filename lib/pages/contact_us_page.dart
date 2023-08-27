@@ -23,6 +23,14 @@ class ContactUsPage extends StatelessComponent {
     yield p([
       text('via '),
       a(
+        href: 'https://fluttercommunity.social/@GeekMeSpeak',
+        target: Target.blank,
+        [text('Mastodon')],
+      ),
+    ]);
+    yield p([
+      text('via '),
+      a(
         href: 'https://twitter.com/GeekMeSpeakHelp',
         target: Target.blank,
         [text('Twitter')],
