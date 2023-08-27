@@ -59,11 +59,11 @@ class PrivacyPolicyPage extends StatelessComponent {
           Styles.box(margin: EdgeInsets.only(left: Unit.em(2.0))),
         ]),
         [
-          a(
-            href: 'https://www.facebook.com/privacy/explanation',
-            target: Target.blank,
-            [text('Facebook/Meta')],
-          ),
+          // a(
+          //   href: 'https://www.facebook.com/privacy/explanation',
+          //   target: Target.blank,
+          //   [text('Facebook/Meta')],
+          // ),
           a(
             href: 'https://twitter.com/en/privacy',
             target: Target.blank,
