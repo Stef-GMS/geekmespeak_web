@@ -33,7 +33,7 @@ class ContactUsPage extends StatelessComponent {
       a(
         href: 'https://twitter.com/GeekMeSpeakHelp',
         target: Target.blank,
-        [text('Twitter')],
+        [text('Twitter/X')],
       ),
     ]);
   }
