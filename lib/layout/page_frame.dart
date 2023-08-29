@@ -63,7 +63,7 @@ class _PageFrameState extends State<PageFrame> {
           ]),
         ]),
         footer([
-          Text('Copyright © Geek Me Speak LLC 2023'),
+          Text('Copyright © 2023 Geek Me Speak LLC.  All rights reserved. '),
         ]),
       ],
     );
