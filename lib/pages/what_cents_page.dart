@@ -16,7 +16,8 @@ class WhatCentsPage extends StatelessComponent {
     yield ProductLayout(
       image: '/images/what-makes-cents.jpg',
       appStoreUrl: 'https://apps.apple.com/us/app/what-makes-cents/id1496867651',
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.geekmespeak.whatmakescents',
+      // FIXME: add play store url
+      //playStoreUrl: 'https://play.google.com/store/apps/details?id=com.geekmespeak.whatmakescents',
       withFlutter: true,
       children: [
         p([
