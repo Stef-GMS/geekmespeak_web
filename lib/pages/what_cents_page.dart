@@ -1,19 +1,21 @@
 import 'package:geekmespeak/layout/product_layout.dart';
-import 'package:jaspr/html.dart';
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 class WhatCentsPage extends StatelessComponent {
   const WhatCentsPage._();
 
+  static final path = '/what-makes-cents';
+
   static final route = Route(
-    path: '/what-makes-cents',
+    path: path,
     title: 'What Makes Cents?',
     builder: (context, state) => WhatCentsPage._(),
   );
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield ProductLayout(
+  Component build(BuildContext context) {
+    return ProductLayout(
       image: '/images/what-makes-cents.jpg',
       appStoreUrl: 'https://apps.apple.com/us/app/what-makes-cents/id1496867651',
       // FIXME: add play store url
@@ -35,7 +37,7 @@ class WhatCentsPage extends StatelessComponent {
         ]),
         p(
           styles: Styles.combine([
-            Styles.box(
+            Styles(
               border: Border.only(
                 left: BorderSide(
                   color: Colors.darkSlateBlue,
@@ -43,9 +45,9 @@ class WhatCentsPage extends StatelessComponent {
                   style: BorderStyle.solid,
                 ),
               ),
-              padding: EdgeInsets.only(left: Unit.em(1)),
+              padding: Padding.only(left: Unit.em(1)),
             ),
-            Styles.text(
+            Styles(
               color: Colors.darkSlateBlue,
             ),
           ]),

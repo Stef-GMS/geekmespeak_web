@@ -9,7 +9,7 @@ class NotFoundPage extends StatelessComponent {
   }
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield Text('Not Found');
+  Component build(BuildContext context) {
+    return Component.text('Not Found');
   }
 }

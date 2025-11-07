@@ -1,7 +1,7 @@
-import 'dart:html';
 import 'package:geekmespeak/app/app.dart';
-import 'package:jaspr/html.dart';
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:web/web.dart';
 
 class TopMenu extends StatefulComponent {
   const TopMenu();
@@ -27,50 +27,51 @@ class TopMenuState extends State {
 
   void _updateSelected() {
     final route = Router.of(context).matchList.last.route as Route;
-    _selected = routes.indexOf(route);
+    _selected = routes.values.toList().indexOf(route);
   }
 
-  void _onNavItemSelected(int index, Route route) {
+  void _onNavItemSelected(int index, String path) {
     setState(() => _selected = index);
-    Router.of(context).push(route.path);
-    (querySelector('.toggle') as CheckboxInputElement).checked = false;
+    Router.of(context).push(path);
+    (document.querySelector('.toggle') as HTMLInputElement).checked = false;
   }
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield nav([
-      input(
-        id: 'menu-state',
-        classes: ['toggle'],
-        type: InputType.checkbox,
-        [],
-      ),
-      label(
-        htmlFor: 'menu-state',
-        classes: ['menu-toggle'],
-        [
-          i([], classes: ['icon', 'fa', 'fa-solid', 'fa-bars']),
-          text('Menu'),
-        ],
-      ),
-      ul([
-        for (final (index, route) in routes.indexed) //
-          li([
-            a(
-              href: route.path,
-              events: {
-                'click': (event) {
-                  _onNavItemSelected(index, route);
-                  (event as Event).preventDefault();
-                },
-              },
-              classes: [
-                if (index == _selected) 'current',
-              ],
-              [Text(route.title!)],
-            ),
-          ]),
-      ]),
-    ]);
+  Component build(BuildContext context) {
+    return nav(
+      [
+        input(
+          id: 'menu-state',
+          classes: 'toggle',
+          type: InputType.checkbox,
+          //[],
+        ),
+        label(
+          htmlFor: 'menu-state',
+          classes: 'menu-toggle',
+          [text('☰ Menu')],
+        ),
+        ul(
+          [
+            for (final (index, MapEntry(:key, :value)) in routes.entries.indexed) //
+              li(
+                [
+                  a(
+                    href: key,
+                    events: {
+                      'click': (event) {
+                        event.preventDefault();
+                        _onNavItemSelected(index, key);
+                      },
+                    },
+                    classes: index == _selected ? 'current' : null,
+                    [text(value.title!)],
+                  ),
+                ],
+              ),
+          ],
+        ),
+      ],
+    );
   }
 }

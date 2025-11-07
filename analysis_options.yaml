@@ -13,18 +13,24 @@
 
 include: package:lints/recommended.yaml
 
-# Uncomment the following section to specify additional rules.
+linter:
+  rules:
+    use_super_parameters: true
+    # The public_member_api_docs rule in Flutter's analysis_options.yaml file
+    # is a linter rule that requires all public members of an API (classes,
+    # methods, fields, etc.) to have documentation comments. This helps ensure
+    # that your code is well-documented and easy to understand for other developers,
+    # and even for your future self.
+    #
+    # To require documentation comments for public members, set to true.
+    # To relax the requirement, set to false.
+    public_member_api_docs: false
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
-# linter:
-#   rules:
-#     - camel_case_types
 
-# analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+formatter:
+  trailing_commas: preserve
 
-# For more information about the core and recommended set of lints, see
-# https://dart.dev/go/core-lints
-
-# For additional information about configuring this file, see
+# Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
