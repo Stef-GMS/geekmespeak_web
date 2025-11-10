@@ -1,5 +1,4 @@
-import 'package:jaspr/components.dart';
-import 'package:jaspr/html.dart';
+import 'package:jaspr/ui.dart';
 
 class ProductLayout extends StatelessComponent {
   const ProductLayout({
@@ -18,33 +17,35 @@ class ProductLayout extends StatelessComponent {
   final List<Component> children;
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield Column(
+  Component build(BuildContext context) {
+    return Column(
       children: [
         Spacer(height: Unit.em(0.5)),
         div(
-          classes: ['product-layout'],
+          classes: 'product-layout',
           [
             div(
-              classes: ['product-layout-icon'],
+              classes: 'product-layout-icon',
               [
                 img(
                   src: image,
-                  styles: Styles.box(
+                  styles: Styles(
                     width: Unit.percent(100),
                   ),
                 ),
               ],
             ),
             div(
-              classes: ['product-layout-content'],
+              classes: 'product-layout-content',
               children,
             ),
           ],
         ),
-        Spacer(height: Unit.em(2)),
+        Spacer(
+          height: Unit.em(2),
+        ),
         div(
-          classes: ['product-layout-links'],
+          classes: 'product-layout-links',
           [
             if (appStoreUrl.isNotEmpty) //
               a(
@@ -59,7 +60,7 @@ class ProductLayout extends StatelessComponent {
                 href: playStoreUrl,
                 target: Target.blank,
                 [
-                  img(src: '/images/google_play_store.png', height: 54),
+                  img(src: '/images/google_play_store_coming_soon.png', height: 54),
                 ],
               ),
           ],
@@ -68,12 +69,12 @@ class ProductLayout extends StatelessComponent {
         if (withFlutter)
           div(
             styles: Styles.combine([
-              Styles.flexbox(
-                direction: FlexDirection.column,
+              Styles(
+                flexDirection: FlexDirection.column,
                 justifyContent: JustifyContent.center,
               ),
-              Styles.text(
-                align: TextAlign.center,
+              Styles(
+                textAlign: TextAlign.center,
               ),
             ]),
             [
@@ -83,20 +84,19 @@ class ProductLayout extends StatelessComponent {
                   href: 'https://flutter.dev/',
                   target: Target.blank,
                   [img(src: '/images/flutter.png', height: 54)],
-                )
+                ),
               ]),
               Spacer(height: Unit.em(1)),
               p(
-                styles: Styles.text(
+                styles: Styles(
                   fontSize: Unit.rem(0.8),
                   color: Colors.gray,
                 ),
                 [
-                  text(
+                  RawText(
                     'Flutter and the related logo are trademarks of Google LLC.<br>'
                     'We are not endorsed by or affiliated with Google LLC.',
-                    rawHtml: true,
-                  )
+                  ),
                 ],
               ),
             ],

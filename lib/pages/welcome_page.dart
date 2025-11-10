@@ -1,14 +1,13 @@
-import 'dart:html';
-
 import 'package:geekmespeak/pages/panda_page.dart';
 import 'package:geekmespeak/pages/roadster_page.dart';
 import 'package:geekmespeak/pages/what_cents_page.dart';
-import 'package:jaspr/components.dart';
-import 'package:jaspr/html.dart';
+import 'package:jaspr/ui.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 class WelcomePage extends StatelessComponent {
   const WelcomePage({super.key});
+
+  static final path = '/';
 
   static final route = Route(
     path: '/',
@@ -17,28 +16,30 @@ class WelcomePage extends StatelessComponent {
   );
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield Text(
-      'Thanks for stopping by! Click on each image to '
-      'learn more about each of our mobile apps.',
-    );
-    yield div(
-      id: 'welcome-items',
-      [
-        _WelcomeItem(
-          image: '/images/roadster-in-space.jpg',
-          route: RoasterPage.route,
-        ),
-        _WelcomeItem(
-          image: '/images/unbearably-adorable.jpg',
-          route: PandaPage.route,
-        ),
-        _WelcomeItem(
-          image: '/images/what-makes-cents.jpg',
-          route: WhatCentsPage.route,
-        ),
-      ],
-    );
+  Component build(BuildContext context) {
+    return Component.fragment([
+      Component.text(
+        'Thanks for stopping by! Click on each image to '
+        'learn more about each of our mobile apps.',
+      ),
+      div(
+        id: 'welcome-items',
+        [
+          _WelcomeItem(
+            image: '/images/roadster-in-space.jpg',
+            route: RoasterPage.route,
+          ),
+          _WelcomeItem(
+            image: '/images/unbearably-adorable.jpg',
+            route: PandaPage.route,
+          ),
+          _WelcomeItem(
+            image: '/images/what-makes-cents.jpg',
+            route: WhatCentsPage.route,
+          ),
+        ],
+      ),
+    ]);
   }
 }
 
@@ -57,17 +58,16 @@ class _WelcomeItem extends StatefulComponent {
 
 class _WelcomeItemState extends State<_WelcomeItem> {
   @override
-  Iterable<Component> build(BuildContext context) sync* {
+  Component build(BuildContext context) {
     Unit.em(1);
-    yield div(
-      classes: ['welcome-item'],
+    return div(
+      classes: 'welcome-item',
       [
         a(
           href: component.route.path,
           events: {
             'click': (event) {
               Router.of(context).push(component.route.path);
-              (event as Event).preventDefault();
             },
           },
           [

@@ -3,3 +3,5 @@
 .firebase/
 build/
 *.iml
+firebase-debug.log
+.DS_Store

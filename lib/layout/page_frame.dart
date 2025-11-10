@@ -1,8 +1,8 @@
-import 'dart:html';
-
 import 'package:geekmespeak/layout/top_menu.dart';
-import 'package:jaspr/html.dart';
+import 'package:jaspr/jaspr.dart';
+import 'package:jaspr/ui.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:web/web.dart';
 
 class PageFrame extends StatefulComponent {
   const PageFrame({
@@ -32,23 +32,17 @@ class _PageFrameState extends State<PageFrame> {
   }
 
   void _updateTitle() {
-    // NOTE: this should work, bug in Jaspr see https://github.com/schultek/jaspr/pull/110
-    // _title = Router.of(context).matchList.title;
-    // Instead we are fixing it inline here as a workaround
-    final matches = Router.of(context).matchList.matches;
-    _title = matches.reversed.fold(
-      null,
-      (prev, match) => prev ?? (match.route is Route ? (match.route as Route).title : null),
-    );
+    _title = Router.of(context).matchList.title;
+
     if (_title case String title) {
       document.title = '$title :: Geek Me Speak LLC';
     }
   }
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield div(
-      classes: ['page'],
+  Component build(BuildContext context) {
+    return div(
+      classes: 'page',
       [
         img(
           id: 'top-banner',
@@ -63,7 +57,11 @@ class _PageFrameState extends State<PageFrame> {
           ]),
         ]),
         footer([
-          Text('Copyright © 2023 Geek Me Speak LLC.  All rights reserved. '),
+          p(
+            [
+              text('Copyright © 2013-2025 Geek Me Speak LLC.  All rights reserved. '),
+            ],
+          ),
         ]),
       ],
     );

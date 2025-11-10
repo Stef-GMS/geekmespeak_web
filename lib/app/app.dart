@@ -6,26 +6,26 @@ import 'package:geekmespeak/pages/privacy_page.dart';
 import 'package:geekmespeak/pages/roadster_page.dart';
 import 'package:geekmespeak/pages/welcome_page.dart';
 import 'package:geekmespeak/pages/what_cents_page.dart';
-import 'package:jaspr/components.dart';
-import 'package:jaspr/html.dart';
+import 'package:jaspr/ui.dart';
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
-final routes = [
-  WelcomePage.route,
-  RoasterPage.route,
-  PandaPage.route,
-  WhatCentsPage.route,
-  ContactUsPage.route,
-  PrivacyPolicyPage.route,
-];
+final routes = <String, Route>{
+  WelcomePage.path: WelcomePage.route,
+  RoasterPage.path: RoasterPage.route,
+  PandaPage.path: PandaPage.route,
+  WhatCentsPage.path: WhatCentsPage.route,
+  ContactUsPage.path: ContactUsPage.route,
+  PrivacyPolicyPage.path: PrivacyPolicyPage.route,
+};
 
 class App extends StatelessComponent {
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield Router(
+  Component build(BuildContext context) {
+    return Router(
       routes: [
         ShellRoute(
-          routes: routes,
+          routes: routes.values.toList(),
           builder: (BuildContext context, RouteState state, Component child) {
             return PageFrame(child: child);
           },
