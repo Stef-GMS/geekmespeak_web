@@ -62,6 +62,12 @@ class _PageFrameState extends State<PageFrame> {
               text('Copyright © 2013-2025 Geek Me Speak LLC.  All rights reserved. '),
             ],
           ),
+          a(href: 'https://jaspr.site', target: Target.blank, [
+            // JasprBadge.light(), // Light background, dark icon and text
+            // JasprBadge.dark(), // Dark background, light icon and text
+            JasprBadge.lightTwoTone(), // Light background, blue icon, dark text
+            // JasprBadge.darkTwoTone(), // Dark background, blue icon, light text
+          ]),
         ]),
       ],
     );
