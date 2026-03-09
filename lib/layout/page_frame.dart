@@ -81,7 +81,7 @@ class _PageFrameState extends State<PageFrame> {
                 Styles(flex: Flex(grow: 1)),
               ]),
               [
-                text('Copyright © 2013-2025 Geek Me Speak LLC.  All rights reserved. '),
+                text('Copyright © 2013-2026 Geek Me Speak LLC.  All rights reserved. '),
               ],
             ),
             a(
