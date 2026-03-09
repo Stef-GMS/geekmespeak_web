@@ -6,8 +6,8 @@ import 'package:geekmespeak/pages/privacy_page.dart';
 import 'package:geekmespeak/pages/roadster_page.dart';
 import 'package:geekmespeak/pages/welcome_page.dart';
 import 'package:geekmespeak/pages/what_cents_page.dart';
-import 'package:jaspr/ui.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr/ui.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 final routes = <String, Route>{
@@ -26,9 +26,14 @@ class App extends StatelessComponent {
       routes: [
         ShellRoute(
           routes: routes.values.toList(),
-          builder: (BuildContext context, RouteState state, Component child) {
-            return PageFrame(child: child);
-          },
+          builder:
+              (
+                BuildContext context,
+                RouteState state,
+                Component child,
+              ) {
+                return PageFrame(child: child);
+              },
         ),
       ],
       errorBuilder: NotFoundPage.builder,

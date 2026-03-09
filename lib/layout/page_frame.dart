@@ -56,19 +56,50 @@ class _PageFrameState extends State<PageFrame> {
             component.child,
           ]),
         ]),
-        footer([
-          p(
-            [
-              text('Copyright © 2013-2025 Geek Me Speak LLC.  All rights reserved. '),
-            ],
-          ),
-          a(href: 'https://jaspr.site', target: Target.blank, [
-            // JasprBadge.light(), // Light background, dark icon and text
-            // JasprBadge.dark(), // Dark background, light icon and text
-            JasprBadge.lightTwoTone(), // Light background, blue icon, dark text
-            // JasprBadge.darkTwoTone(), // Dark background, blue icon, light text
+        footer(
+          styles: Styles.combine([
+            Styles(
+              padding: Spacing.symmetric(
+                vertical: 1.5.em,
+                horizontal: 1.em,
+              ),
+            ),
+            Styles(color: Color.rgba(255, 255, 255, 0.5)),
+
+            Styles(
+              display: Display.flex,
+              flexDirection: FlexDirection.row,
+              justifyContent: JustifyContent.spaceBetween,
+              alignItems: AlignItems.center,
+              //gap: 1.em,
+            ),
           ]),
-        ]),
+          [
+            p(
+              styles: Styles.combine([
+                Styles(padding: Spacing.zero),
+                Styles(flex: Flex(grow: 1)),
+              ]),
+              [
+                text('Copyright © 2013-2025 Geek Me Speak LLC.  All rights reserved. '),
+              ],
+            ),
+            a(
+              href: 'https://jaspr.site',
+              target: Target.blank,
+              styles: Styles(
+                display: Display.flex,
+                alignItems: AlignItems.center,
+              ),
+              [
+                // JasprBadge.light(), // Light background, dark icon and text
+                // JasprBadge.dark(), // Dark background, light icon and text
+                JasprBadge.lightTwoTone(), // Light background, blue icon, dark text
+                // JasprBadge.darkTwoTone(), // Dark background, blue icon, light text
+              ],
+            ),
+          ],
+        ),
       ],
     );
   }
