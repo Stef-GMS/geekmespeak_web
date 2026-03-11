@@ -29,7 +29,7 @@ html, body {
 }
 
 #top-banner {
-    background-color: #000;
+    background-color: #000; /* same as #000000; in CSS #000 is a shortcut because each value is the same */
     width: 100%;
     object-fit: cover;
     padding: 1em;
@@ -37,7 +37,7 @@ html, body {
 
 nav, footer {
     position: relative;
-    background-color: #222;
+    background-color: #222; /* same as #222222; in CSS #222 is a shortcut because each value is the same */
     color: #fff;
 }
 
