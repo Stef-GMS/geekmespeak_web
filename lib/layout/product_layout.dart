@@ -1,4 +1,7 @@
-import 'package:jaspr/ui.dart';
+import 'package:geekmespeak/components/column.dart';
+import 'package:geekmespeak/components/spacer.dart';
+import 'package:jaspr/dom.dart';
+import 'package:jaspr/jaspr.dart';
 
 class ProductLayout extends StatelessComponent {
   const ProductLayout({
@@ -78,7 +81,7 @@ class ProductLayout extends StatelessComponent {
               ),
             ]),
             [
-              p([text('Made with a single codebase using the Flutter SDK by Google')]),
+              p([.text('Made with a single codebase using the Flutter SDK by Google')]),
               div([
                 a(
                   href: 'https://flutter.dev/',

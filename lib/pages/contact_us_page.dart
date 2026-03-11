@@ -1,3 +1,4 @@
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
@@ -24,27 +25,27 @@ class ContactUsPage extends StatelessComponent {
     // ]);
     return Component.fragment([
       p([
-        text('via '),
+        .text('via '),
         a(
           href: 'https://bsky.app/profile/geekmespeak.com',
           target: Target.blank,
-          [text('Bluesky')],
+          [.text('Bluesky')],
         ),
       ]),
       p([
-        text('via '),
+        .text('via '),
         a(
           href: 'https://fluttercommunity.social/@GeekMeSpeak',
           target: Target.blank,
-          [text('Mastodon')],
+          [.text('Mastodon')],
         ),
       ]),
       p([
-        text('via '),
+        .text('via '),
         a(
           href: 'https://twitter.com/GeekMeSpeakHelp',
           target: Target.blank,
-          [text('Twitter/X')],
+          [.text('Twitter/X')],
         ),
       ]),
     ]);

@@ -1,8 +1,7 @@
 import 'package:geekmespeak/layout/top_menu.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:jaspr/ui.dart';
 import 'package:jaspr_router/jaspr_router.dart';
-import 'package:web/web.dart';
 
 class PageFrame extends StatefulComponent {
   const PageFrame({
@@ -17,33 +16,15 @@ class PageFrame extends StatefulComponent {
 }
 
 class _PageFrameState extends State<PageFrame> {
-  String? _title;
-
-  @override
-  void initState() {
-    super.initState();
-    _updateTitle();
-  }
-
-  @override
-  void didUpdateComponent(covariant PageFrame oldComponent) {
-    super.didUpdateComponent(oldComponent);
-    _updateTitle();
-  }
-
-  void _updateTitle() {
-    _title = Router.of(context).matchList.title;
-
-    if (_title case String title) {
-      document.title = '$title :: Geek Me Speak LLC';
-    }
-  }
-
   @override
   Component build(BuildContext context) {
+    final title = Router.of(context).matchList.title ?? '';
     return div(
       classes: 'page',
       [
+        Document.head(
+          title: title.isNotEmpty ? '$title :: Geek Me Speak LLC' : 'Geek Me Speak LLC',
+        ),
         img(
           id: 'top-banner',
           src: '/images/top_banner.png',
@@ -51,8 +32,8 @@ class _PageFrameState extends State<PageFrame> {
         TopMenu(),
         article([
           div(id: 'post-content', [
-            if (_title case String title) //
-              h1([text(title)]),
+            if (title.isNotEmpty) //
+              h1([.text(title)]),
             component.child,
           ]),
         ]),
@@ -81,7 +62,7 @@ class _PageFrameState extends State<PageFrame> {
                 Styles(flex: Flex(grow: 1)),
               ]),
               [
-                text('Copyright © 2013-2026 Geek Me Speak LLC.  All rights reserved. '),
+                .text('Copyright © 2013-2026 Geek Me Speak LLC.  All rights reserved. '),
               ],
             ),
             a(

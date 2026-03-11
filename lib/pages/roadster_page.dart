@@ -20,7 +20,7 @@ class RoasterPage extends StatelessComponent {
       appStoreUrl: 'https://itunes.apple.com/us/app/roadster-in-space/id1347372590',
       // playStoreUrl: '', // FIXME: add play store url
       children: [
-        text(
+        .text(
           'Join the Space Monkey riding in his roadster through space. '
           'He needs your help in collecting bananas and not crashing '
           'into an alien spaceship.',

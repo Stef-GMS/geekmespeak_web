@@ -1,4 +1,6 @@
-import 'package:jaspr/ui.dart';
+import 'package:geekmespeak/components/spacer.dart';
+import 'package:jaspr/dom.dart';
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 class PrivacyPolicyPage extends StatelessComponent {
@@ -15,42 +17,42 @@ class PrivacyPolicyPage extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return Component.fragment([
-      p([text('Effective Date: 06-July-2019')]),
-      h2([text('Who we are')]),
+      p([.text('Effective Date: 06-July-2019')]),
+      h2([.text('Who we are')]),
       div(
         styles: Styles.combine([
           Styles(padding: Spacing.all(Unit.em(1))),
           Styles(color: Colors.white),
           Styles(backgroundColor: Color.value(0x555555)),
         ]),
-        [text('Our website address is: https://GeekMeSpeak.com')],
+        [.text('Our website address is: https://GeekMeSpeak.com')],
       ),
       Spacer(height: Unit.em(1)),
-      h2([text('App Data')]),
+      h2([.text('App Data')]),
       p([
-        text(
+        .text(
           'Our published apps do NOT currently collect any data. '
           'If in the future we create apps which collect data, '
           'we will update this Privacy Policy.',
         ),
       ]),
       p([
-        text(
+        .text(
           'Our published apps do NOT transmit to or store '
           'any data to our website or server(s).',
         ),
       ]),
       p([
-        text(
+        .text(
           'Any apps in testing may collect usage and/or crash '
           'data, if you choose to share this data it will be '
           'transmitted to us.',
         ),
       ]),
       Spacer(height: Unit.em(1)),
-      h2([text('Website Data')]),
+      h2([.text('Website Data')]),
       p([
-        text(
+        .text(
           'Data transmitted via our Contact Us page links '
           'are managed by the respective sites.',
         ),
@@ -69,40 +71,40 @@ class PrivacyPolicyPage extends StatelessComponent {
             a(
               href: 'https://bsky.social/about/support/privacy-policy',
               target: Target.blank,
-              [text('Bluesky')],
+              [.text('Bluesky')],
             ),
             br(),
             a(
               href: 'https://twitter.com/en/privacy',
               target: Target.blank,
-              [text('Twitter/X')],
+              [.text('Twitter/X')],
             ),
           ],
         ),
       ]),
       p([
-        text('We use '),
+        .text('We use '),
         a(
-          [text('basic Google Analytics')],
+          [.text('basic Google Analytics')],
           href: 'https://analytics.google.com/',
           target: Target.blank,
         ),
-        text(' on our website to understand how our site is used. You can see '),
+        .text(' on our website to understand how our site is used. You can see '),
         a(
-          [text('Google’s privacy policy')],
+          [.text('Google’s privacy policy')],
           href: 'https://policies.google.com/privacy',
           target: Target.blank,
         ),
-        text(
+        .text(
           ' for more details. The lowest level of detail we see is, '
           'if the data is available:',
         ),
       ]),
       ul([
-        li([text('Acquisition: How you reached our site (ex. direct or search)')]),
-        li([text('Demographics: Language, Country, and City (NOT your specific location)')]),
-        li([text('Mobile: Device brand, model, marketing name, and screen resolution')]),
-        li([text('Technology: Browser & operating system and Internet service provider')]),
+        li([.text('Acquisition: How you reached our site (ex. direct or search)')]),
+        li([.text('Demographics: Language, Country, and City (NOT your specific location)')]),
+        li([.text('Mobile: Device brand, model, marketing name, and screen resolution')]),
+        li([.text('Technology: Browser & operating system and Internet service provider')]),
       ]),
       Spacer(height: Unit.em(3.0)),
     ]);

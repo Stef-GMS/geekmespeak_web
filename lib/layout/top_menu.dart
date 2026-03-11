@@ -1,7 +1,8 @@
 import 'package:geekmespeak/app/app.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
-import 'package:web/web.dart';
+import 'package:universal_web/web.dart';
 
 class TopMenu extends StatefulComponent {
   const TopMenu();
@@ -44,12 +45,11 @@ class TopMenuState extends State {
           id: 'menu-state',
           classes: 'toggle',
           type: InputType.checkbox,
-          //[],
         ),
         label(
           htmlFor: 'menu-state',
           classes: 'menu-toggle',
-          [text('☰ Menu')],
+          [.text('☰ Menu')],
         ),
         ul(
           [
@@ -65,7 +65,7 @@ class TopMenuState extends State {
                       },
                     },
                     classes: index == _selected ? 'current' : null,
-                    [text(value.title!)],
+                    [.text(value.title!)],
                   ),
                 ],
               ),
