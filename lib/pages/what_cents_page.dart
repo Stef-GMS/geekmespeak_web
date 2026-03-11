@@ -1,4 +1,5 @@
 import 'package:geekmespeak/layout/product_layout.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
@@ -23,13 +24,13 @@ class WhatCentsPage extends StatelessComponent {
       withFlutter: true,
       children: [
         p([
-          text(
+          .text(
             'What Makes Cents? guides the user to know how intensely to ask or '
             'not ask for something or how intensely to say no to something.',
           ),
         ]),
         p([
-          text(
+          .text(
             'After answering either ‘yes’ or ‘no’ to 10 questions, the '
             'resulting suggestion will range on how intensely to ask or '
             'not ask for something or how intensely to say no to something.',
@@ -53,7 +54,7 @@ class WhatCentsPage extends StatelessComponent {
           ]),
           [
             i([
-              text(
+              .text(
                 'The purpose of this app is to be a guide. It is not intended '
                 'to be a substitute for professional medical advice or treatment. '
                 'Seek advice from a qualified health provider if you have any '

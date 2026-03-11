@@ -1,4 +1,5 @@
 import 'package:geekmespeak/layout/product_layout.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
@@ -20,13 +21,13 @@ class PandaPage extends StatelessComponent {
       appStoreUrl: 'https://itunes.apple.com/us/app/bearly-adorable-stickers/id1330877612',
       // playStoreUrl: '', // FIXME: add play store url
       children: [
-        text(
+        .text(
           'Add some “panda-monium” to your iMessage conversations with '
           'these “unbearably adorable” panda stickers.',
         ),
         br(),
         br(),
-        text(
+        .text(
           'Do you have suggestions for new speech bubbles? Submit '
           'suggestions via the Contact Us link.',
         ),

@@ -16,7 +16,7 @@ dart pub global activate webdev
 ## Run locally with
 
 ```sh
-webdev serve --auto refresh
+jaspr serve
 ```
 
 ## Debugging
@@ -24,7 +24,7 @@ webdev serve --auto refresh
 Install the [Dart Debug Extension](https://chrome.google.com/webstore/detail/dart-debug-extension/eljbmlghnomdjgdjmbdekegdkbabckhm) and run:
 
 ```sh
-webdev serve --debug-extension
+jaspr serve --debug
 ```
 
 or you use devtools [Debugging Web Info](https://dart.dev/web/debugging)
@@ -32,6 +32,6 @@ or you use devtools [Debugging Web Info](https://dart.dev/web/debugging)
 ## Build and Deploy
 
 ```sh
-webdev build
+jaspr build
 firebase deploy
 ```

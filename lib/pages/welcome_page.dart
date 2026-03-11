@@ -1,7 +1,9 @@
+import 'package:geekmespeak/components/column.dart';
 import 'package:geekmespeak/pages/panda_page.dart';
 import 'package:geekmespeak/pages/roadster_page.dart';
 import 'package:geekmespeak/pages/what_cents_page.dart';
-import 'package:jaspr/ui.dart';
+import 'package:jaspr/dom.dart';
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 class WelcomePage extends StatelessComponent {
@@ -78,7 +80,7 @@ class _WelcomeItemState extends State<_WelcomeItem> {
                   width: 200,
                   height: 200,
                 ),
-                text(component.route.title!),
+                .text(component.route.title!),
               ],
             ),
           ],
